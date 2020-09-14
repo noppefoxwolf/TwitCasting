@@ -90,3 +90,12 @@ public struct TwitCastingError: Error, Decodable {
         public let message: String
     }
 }
+
+public struct App: Codable {
+    ///   アプリケーションのクライアントID
+    public let clientId: String
+    ///   アプリケーション名
+    public let name: String
+    ///    アプリケーション開発者のユーザID
+    public let ownerUserId: String
+}

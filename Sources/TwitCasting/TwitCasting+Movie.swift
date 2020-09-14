@@ -20,7 +20,7 @@ public extension TwitCasting.Client {
             ///配信者のユーザ情報 Userオブジェクト
             public let broadcaster: User
             ///設定されているタグの配列
-            public let tags: String
+            public let tags: [String]
         }
     }
 }

@@ -9,75 +9,84 @@ import Foundation
 
 public struct User: Codable {
     ///ユーザID
-    let id: String
+    public let id: String
     ///id同様にユーザを特定する識別子ですが、screen_idはユーザによって変更される場合があります。
-    let screenId: String
+    public let screenId: String
     ///ヒューマンリーダブルなユーザの名前
-    let name: String
+    public let name: String
     ///ユーザアイコンのURL
-    let image: String
+    public let image: String
     ///プロフィール文章
-    let profile: String
+    public let profile: String
     ///ユーザのレベル
-    let level: Int
+    public let level: Int
     ///ユーザが最後に配信したライブのID
-    let lastMovieId: String?
+    public let lastMovieId: String?
     ///現在ライブ配信中かどうか
-    let isLive: Bool
+    public let isLive: Bool
 }
 
 public struct Movie: Codable {
     ///    ライブID
-    let id: String
+    public let id: String
     ///ライブ配信者のユーザID
-    let userId: String
+    public let userId: String
     ///タイトル
-    let title: String
+    public let title: String
     ///テロップ
-    let subtitle: String?
+    public let subtitle: String?
     ///ライブ配信者の最新コメントの文章
-    let lastOwnerComment: String?
+    public let lastOwnerComment: String?
     ///カテゴリID
-    let category: String?
+    public let category: String?
     ///ライブ(録画)へのリンクURL
-    let link: String
+    public let link: String
     ///ライブ配信中かどうか
-    let isLive: Bool
+    public let isLive: Bool
     ///録画が公開されているかどうか
-    let isRecorded: Bool
+    public let isRecorded: Bool
     ///    総コメント数
-    let commentCount: Int
+    public let commentCount: Int
     ///   サムネイル画像(大)のURL
-    let largeThumbnail: String
+    public let largeThumbnail: String
     ///  サムネイル画像(小)のURL
-    let smallThumbnail: String
+    public let smallThumbnail: String
     ///  配信地域(国コード)
-    let country: String
+    public let country: String
     /// 配信時間(秒)
-    let duration: Int
+    public let duration: Int
     ///配信開始日時のunixタイムスタンプ
-    let created: Int
+    public let created: Int
     ///   コラボ配信かどうか
-    let isCollabo: Bool
+    public let isCollabo: Bool
     ///   合言葉配信かどうか
-    let isProtected: Bool
+    public let isProtected: Bool
     /// 最大同時視聴数(配信中の場合0)
-    let maxViewCount: Int
+    public let maxViewCount: Int
     ///現在の同時視聴者数(配信中ではない場合0)
-    let currentViewCount: Int
+    public let currentViewCount: Int
     ///総視聴者数
-    let totalViewCount: Int
+    public let totalViewCount: Int
     ///HTTP Live Streaming再生用のURL
-    let hlsUrl: String?
+    public let hlsUrl: String?
 }
 
-struct Comment: Codable {
+public struct Comment: Codable {
     ///コメントID
-    let id: String
+    public let id: String
     ///コメント本文
-    let message: String
+    public let message: String
     ///コメント投稿者の情報 Userオブジェクト
-    let fromUser: User
+    public let fromUser: User
     ///コメント投稿日時のunixタイムスタンプ
-    let created: Int
+    public let created: Int
+}
+
+public struct TwitCastingError: Error, Decodable {
+    public let error: Error
+    
+    public struct Error: Decodable {
+        public let code: Int
+        public let message: String
+    }
 }

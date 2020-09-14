@@ -32,11 +32,11 @@ public extension TwitCasting.Client {
     enum GetComments {
         public struct Response: Codable {
             /// ライブID
-            let movieId: String
+            public let movieId: String
             ///   総コメント数
-            let allCount: Int
+            public let allCount: Int
             ///    Commentオブジェクトの配列
-            let comments: [Comment]
+            public let comments: [Comment]
         }
     }
 }

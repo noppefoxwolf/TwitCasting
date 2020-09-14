@@ -16,11 +16,11 @@ public extension TwitCasting.Client {
     enum GetCurrentLive {
         public struct Response: Codable {
             ///Movieオブジェクト
-            let movie: Movie
+            public let movie: Movie
             ///配信者のユーザ情報 Userオブジェクト
-            let broadcaster: User
+            public let broadcaster: User
             ///設定されているタグの配列
-            let tags: String
+            public let tags: String
         }
     }
 }

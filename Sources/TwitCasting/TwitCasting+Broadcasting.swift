@@ -16,11 +16,11 @@ public extension TwitCasting.Client {
     enum GetRTMP {
         public struct Response: Codable {
             ///RTMP配信が有効かどうか
-            let enabled: Bool
+            public let enabled: Bool
             ///RTMP配信用URL
-            let url: String?
+            public let url: String?
             ///RTMP配信用キー
-            let streamKey: String?
+            public let streamKey: String?
         }
     }
 }

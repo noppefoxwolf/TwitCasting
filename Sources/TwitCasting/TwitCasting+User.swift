@@ -19,7 +19,7 @@ public extension TwitCasting.Client {
 }
 
 public extension TwitCasting.Client {
-    func verifyCredentials(userId: String) -> AnyPublisher<VerifyCredentials.Response, Error> {
+    func verifyCredentials() -> AnyPublisher<VerifyCredentials.Response, Error> {
         self.get(path: "/verify_credentials")
     }
     

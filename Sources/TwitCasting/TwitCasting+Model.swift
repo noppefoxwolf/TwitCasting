@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct User: Codable {
+public struct User: Codable, Identifiable, Equatable, Hashable {
     ///ユーザID
     public let id: String
     ///id同様にユーザを特定する識別子ですが、screen_idはユーザによって変更される場合があります。
@@ -26,7 +26,7 @@ public struct User: Codable {
     public let isLive: Bool
 }
 
-public struct Movie: Codable {
+public struct Movie: Codable, Identifiable, Equatable, Hashable {
     ///    ライブID
     public let id: String
     ///ライブ配信者のユーザID
@@ -71,7 +71,7 @@ public struct Movie: Codable {
     public let hlsUrl: String?
 }
 
-public struct Comment: Codable {
+public struct Comment: Codable, Identifiable, Equatable, Hashable {
     ///コメントID
     public let id: String
     ///コメント本文
